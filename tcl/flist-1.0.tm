@@ -90,11 +90,11 @@ namespace eval odfi::functional::pattern {
         ## Factories
         ################
         :public object method none args {
-            return [Option new -content "" -none true ]
+            return [odfi::functional::pattern::Option new -content "" -none true ]
         }
 
         :public object method some value {
-            return [Option new -content $value -none false ]
+            return [odfi::functional::pattern::Option new -content $value -none false ]
         }
 
     }
