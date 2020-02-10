@@ -1,0 +1,7 @@
+{
+  "name": "odfi-tcllib",
+  "description": "ODFI TCL Lib",
+  "authors": "Richard Leys",
+  "version": "1.0.0",
+  "dependencies": {}
+}
