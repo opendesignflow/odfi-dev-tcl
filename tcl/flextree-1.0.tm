@@ -84,6 +84,27 @@ namespace eval odfi::flextree {
             #::odfi::closures::run %closure
         }
 
+        :public method applyUp closure {
+
+
+            #odfi::closures::withITCLLambda $closure 2 {
+            #    $lambda apply
+            #}
+
+            #return
+            #::odfi::closures::run %closure
+            #return 
+
+            #puts "Will be running $closure on [:info class] -> [:info lookup methods]"
+            set l [odfi::closures::buildITCLLambda $closure]
+            try {
+                uplevel 2 $l apply
+            } finally {
+                odfi::closures::redeemITCLLambda $l
+            }
+            #::odfi::closures::run %closure
+        }
+
  
         ## Parent Interface 
         ############################

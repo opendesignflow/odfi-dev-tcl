@@ -133,6 +133,18 @@ namespace eval odfi::attributes {
 
                 return [$group hasAttribute $name] 
             }
+
+            +method onAttribute {groupN name closure} {
+
+                #puts "on Attribute: $groupN $name"
+                if {[:hasAttribute $groupN $name]} {
+                    #puts "Found Attr"
+                    set it [:getAttribute $groupN $name]
+                    :applyUp $closure
+                }
+
+
+            }
             
             +method attributeMatch {groupN name pattern} {
             
